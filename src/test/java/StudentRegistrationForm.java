@@ -21,7 +21,6 @@ public class StudentRegistrationForm {
         String lastName = "Testov";
         String email = "Test@mail.ru";
         String phoneNumber = "1234567890";
-        String currentAddress = "Test Federation, TestTown";
         String subject = "Computer Science";
         String gender = "Male";
         String dateOfBirth = "18 February,1994";
@@ -49,7 +48,7 @@ public class StudentRegistrationForm {
         $("#hobbiesWrapper").$(byText("Reading")).click();
         $("#hobbiesWrapper").$(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("ForTest.png");
-        $("#currentAddress").setValue(currentAddress);
+        $("#currentAddress").setValue(address);
         $("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
         $("#city").click();
@@ -60,8 +59,8 @@ public class StudentRegistrationForm {
         $(".modal-header").shouldHave(text("Thanks for submitting the form"));
         $(".modal-body").shouldHave(text(firstName),
                 text(lastName), text(email), text(phoneNumber),
-                text(currentAddress), text(subject), text(gender),
-                text(dateOfBirth), text(hobbies), text(picture),
+                text(subject), text(gender), text(dateOfBirth),
+                text(hobbies), text(picture),
                 text(address), text(stateAndCity));
     }
 
